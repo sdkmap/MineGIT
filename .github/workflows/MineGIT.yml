@@ -59,7 +59,7 @@ jobs:
         with:
           timeout: 6h
           port: 25565 
-          ngrok_authtoken: ${{ secrets.NGROK_AUTHTOKEN }}
+          ngrok_authtoken: ${{ secrets.NGROK_AUTH_TOKEN }}
           tunnel_type: tcp
 
       - name: Grab

@@ -55,9 +55,9 @@ jobs:
           sudo apt install python3-pip
 
       - name: setup ngrok
-        uses: luisboto/ngrok-tunnel-action@<VERSION>
+        uses: luisboto/ngrok-tunnel-action@v0.1.7.2
         with:
-          timeout: 1h
+          timeout: 6h
           port: 25565 
           ngrok_authtoken: ${{ secrets.NGROK_AUTHTOKEN }}
           tunnel_type: tcp

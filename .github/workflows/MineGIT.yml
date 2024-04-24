@@ -51,7 +51,6 @@ jobs:
 
       - name: install_dependencies
         run: |
-          sudo apt-get update -y -qq
           sudo apt install python3-pip
 
       - name: setup ngrok

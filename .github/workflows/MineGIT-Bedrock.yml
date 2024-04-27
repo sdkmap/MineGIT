@@ -24,7 +24,7 @@ on:
         default: A MineGIT server
       JAR:
         type: string
-        description: Get the server file.
+        description: Get the server file. (LINUX ONLY)
 
 permissions:
   contents: write
@@ -70,8 +70,7 @@ jobs:
       - name: Generate Server Files
         if: github.event.inputs.setup == '1'
         run: |
-           cd server
-           LD_LIBRARY_PATH=. ./bedrock_server
+           LD_LIBRARY_PATH=. ./server/bedrock_server
         continue-on-error: true
 
       - name: Change MOTD

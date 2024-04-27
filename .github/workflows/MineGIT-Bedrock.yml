@@ -1,0 +1,96 @@
+name: MineGIT-bedrock
+
+on:
+  workflow_dispatch:
+    inputs:
+      should_add_op:
+        type: boolean
+        default: false
+        description: Whether to apply the value of op_name input.
+        required: true
+      setup:
+        description: 'setup and generate the files?'
+      op_name:
+        type: string
+        required: false
+        description: The Minecraft username of a player to make an operator.
+      eula_agree:
+        type: boolean
+        required: true
+        description: Do you agree to the Minecraft EULA? https://www.minecraft.net/en-us/eula
+      motd:
+        type: string
+        description: The MOTD to set in server.properties.
+        default: A MineGIT server
+      JAR:
+        type: string
+        description: Get the server file.
+
+permissions:
+  contents: write
+
+jobs:
+  GitBIT:
+    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: clone repo locally
+        uses: actions/checkout@v4
+
+      - name: import Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: setup jdk 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: "microsoft"
+
+      - name: install_dependencies
+        run: |
+          sudo apt install unzip
+
+      - name: setup ngrok
+        uses: dsmirc/ngrok-tunnel-action@cd
+        with:
+          timeout: 6h
+          port: 19132 
+          ngrok_authtoken: ${{ secrets.NGROK_AUTH_TOKEN }}
+          tunnel_type: tcp
+
+      - name: Grab
+        run: |
+         wget -O "server.zip" "${{ inputs.JAR }}"
+         unzip server.zip -d server
+         cd server
+
+      - name: Generate Server Files
+        if: github.event.inputs.setup == '1'
+        run: |
+           cd server
+           LD_LIBRARY_PATH=. ./bedrock_server
+        continue-on-error: true
+
+      - name: Change MOTD
+        run: node ./scripts/modify-motd.js "${{ inputs.motd }}"
+
+      - name: Run Server
+        if: inputs.should_add_op
+        run: |
+          if [ "${{ inputs.should_add_op }}" = true ]; then
+            printf "op ${{ inputs.op_name }}" | cd server && LD_LIBRARY_PATH=. ./bedrock_server
+          else
+            cd server && LD_LIBRARY_PATH=. ./bedrock_server
+          fi
+
+      - name: Save to GitHub
+        run: |
+          git pull
+          git config user.name github-actions
+          git config user.email actions@github.com
+          git add server
+          git commit -m "Generate bedrock server files"
+          git push

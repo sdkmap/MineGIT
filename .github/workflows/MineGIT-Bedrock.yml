@@ -70,6 +70,7 @@ jobs:
       - name: Generate Server Files
         if: github.event.inputs.setup == '1'
         run: |
+           chmod +x ./server/bedrock_server
            LD_LIBRARY_PATH=. ./server/bedrock_server
         continue-on-error: true
 

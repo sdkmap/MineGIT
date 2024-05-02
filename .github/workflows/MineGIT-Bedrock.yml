@@ -65,7 +65,7 @@ jobs:
         run: |
          wget -O "server.zip" "${{ inputs.JAR }}"
          unzip server.zip -d server
-         cd server
+
 
       - name: Generate Server Files
         if: github.event.inputs.setup == '1'
@@ -81,9 +81,9 @@ jobs:
         if: inputs.should_add_op
         run: |
           if [ "${{ inputs.should_add_op }}" = true ]; then
-            printf "op ${{ inputs.op_name }}" | cd server && LD_LIBRARY_PATH=. ./bedrock_server
+            printf "op ${{ inputs.op_name }}" | chmod +x ./server/bedrock_server && LD_LIBRARY_PATH=. ./server/bedrock_server
           else
-            cd server && LD_LIBRARY_PATH=. ./bedrock_server
+            chmod +x ./server/bedrock_server && LD_LIBRARY_PATH=. ./server/bedrock_server
           fi
 
       - name: Save to GitHub

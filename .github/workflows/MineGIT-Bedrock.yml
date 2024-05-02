@@ -22,9 +22,13 @@ on:
         type: string
         description: The MOTD to set in server.properties.
         default: A MineGIT server
+      windows:
+        type: boolean
+        required: true
+        description: Do you want it to be run in Linux (ubuntu)? Note that it's currently broken due to a bug from the minecraft server files
       JAR:
         type: string
-        description: Get the server file. (LINUX ONLY)
+        description: Get the server file. (based on your choice)
 
 permissions:
   contents: write
@@ -32,7 +36,7 @@ permissions:
 jobs:
   GitBIT:
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-    runs-on: ubuntu-latest
+    runs-on: ${{ github.event.inputs.windows == true ? 'ubutnu-latest' : 'windows-latest' }}
 
     steps:
       - name: clone repo locally
@@ -50,10 +54,13 @@ jobs:
           distribution: "microsoft"
 
       - name: install_dependencies
+        if: inputs.windows
         run: |
           sudo apt install unzip
 
+
       - name: setup ngrok
+        if: inputs.windows
         uses: dsmirc/ngrok-tunnel-action@cd
         with:
           timeout: 6h
@@ -61,10 +68,28 @@ jobs:
           ngrok_authtoken: ${{ secrets.NGROK_AUTH_TOKEN }}
           tunnel_type: tcp
 
+
+        - name: Ngrok
+          run: | 
+           Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
+           Expand-Archive ngrok.zip
+           .\ngrok\ngrok.exe authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
+           Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
+           Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+           .\ngrok\ngrok.exe tcp 19132
+           echo "::set-output name=tunnel-url::$( curl http://127.0.0.1:4040/api/tunnels | jq -r ".tunnels[0].public_url" )"
+           
       - name: Grab
+        if: inputs.windows
         run: |
          wget -O "server.zip" "${{ inputs.JAR }}"
          unzip server.zip -d server
+
+
+      - name: Grab
+        run: |
+         wget -O "server.zip" "${{ inputs.JAR }}"
+         Expand-Archive -Force server.zip -DestinationPath server
 
 
       - name: Generate Server Files
@@ -78,7 +103,7 @@ jobs:
         run: node ./scripts/modify-motd.js "${{ inputs.motd }}"
 
       - name: Run Server
-        if: inputs.should_add_op
+        if: ${{ inputs.should_add_op && inputs.windows }}
         run: |
           if [ "${{ inputs.should_add_op }}" = true ]; then
             printf "op ${{ inputs.op_name }}" | chmod +x ./server/bedrock_server && LD_LIBRARY_PATH=. ./server/bedrock_server
@@ -86,7 +111,18 @@ jobs:
             chmod +x ./server/bedrock_server && LD_LIBRARY_PATH=. ./server/bedrock_server
           fi
 
+
+        - name: Run Server
+          if: inputs.should_add_op
+          run: |
+            if ($env:should_add_op -eq "true") {
+            echo "op $env:op_name" | ./server/bedrock_server.exe
+            } else {
+            ./server/bedrock_server.exe
+            }
+
       - name: Save to GitHub
+        if: inputs.windows
         run: |
           git config --global http.postBuffer 157286400
           rm -r server/behavior_packs

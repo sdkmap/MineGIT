@@ -61,7 +61,6 @@ jobs:
         run: |
           sudo apt install unzip
 
-
       - name: setup ngrok
         if: inputs.windows
         uses: dsmirc/ngrok-tunnel-action@cd
@@ -72,8 +71,8 @@ jobs:
           tunnel_type: tcp
 
 
-        - name: Ngrok
-          run: | 
+      - name: Ngrok
+        run: | 
            Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
            Expand-Archive ngrok.zip
            .\ngrok\ngrok.exe authtoken ${{ secrets.NGROK_AUTH_TOKEN }}

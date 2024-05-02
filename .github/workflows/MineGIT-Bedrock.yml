@@ -89,7 +89,7 @@ jobs:
       - name: Save to GitHub
         run: |
           rm -r server/behavior_packs
-          rm server/resource_packs
+          rm -r server/resource_packs
           git pull
           git config user.name github-actions
           git config user.email actions@github.com

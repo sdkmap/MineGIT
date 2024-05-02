@@ -95,10 +95,16 @@ jobs:
 
 
       - name: Generate Server Files
-        if: github.event.inputs.setup == '1'
+        if: ${{ github.event.inputs.setup == '1' && inputs.windows }}
         run: |
            chmod +x ./server/bedrock_server
            LD_LIBRARY_PATH=. ./server/bedrock_server
+        continue-on-error: true
+
+      - name: Generate Server Files
+        if: github.event.inputs.setup == '1' 
+        run: |
+          ./server/bedrock_server.exe
         continue-on-error: true
 
       - name: Change MOTD

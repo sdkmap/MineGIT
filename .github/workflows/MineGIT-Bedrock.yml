@@ -36,7 +36,10 @@ permissions:
 jobs:
   GitBIT:
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-    runs-on: ${{ github.event.inputs.windows == true ? 'ubutnu-latest' : 'windows-latest' }}
+    runs-on: 
+    if: inputs.windows == true
+    then: ubuntu-latest
+    else: windows-latest
 
     steps:
       - name: clone repo locally

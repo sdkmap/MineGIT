@@ -114,9 +114,9 @@ jobs:
           fi
 
 
-        - name: Run Server
-          if: inputs.should_add_op
-          run: |
+      - name: Run Server
+        if: inputs.should_add_op
+        run: |
             if ($env:should_add_op -eq "true") {
             echo "op $env:op_name" | ./server/bedrock_server.exe
             } else {

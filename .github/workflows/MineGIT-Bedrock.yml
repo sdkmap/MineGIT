@@ -88,6 +88,7 @@ jobs:
 
       - name: Save to GitHub
         run: |
+          git config --global http.postBuffer 157286400
           rm -r server/behavior_packs
           rm -r server/resource_packs
           git pull

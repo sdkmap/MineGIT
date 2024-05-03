@@ -25,6 +25,10 @@ on:
       JAR:
         type: string
         description: Get the server jar file.
+      bedrcok:
+        type: boolean
+        required: true
+        description: Allow bedrock compatibility ?
 
 permissions:
   contents: write
@@ -46,7 +50,7 @@ jobs:
       - name: setup jdk 17
         uses: actions/setup-java@v3
         with:
-          java-version: 17
+          java-version: 21
           distribution: "microsoft"
 
       - name: install_dependencies
@@ -58,6 +62,16 @@ jobs:
         with:
           timeout: 6h
           port: 25565 
+          ngrok_authtoken: ${{ secrets.NGROK_AUTH_TOKEN }}
+          tunnel_type: tcp
+
+
+      - name: setup ngrok
+        if: inputs.bedrock
+        uses: dsmirc/ngrok-tunnel-action@cd
+        with:
+          timeout: 6h
+          port: 19132 
           ngrok_authtoken: ${{ secrets.NGROK_AUTH_TOKEN }}
           tunnel_type: tcp
 
@@ -89,7 +103,7 @@ jobs:
         if: inputs.should_add_op
         run: |
           if [ "${{ inputs.should_add_op }}" = true ]; then
-            printf "op ${{ inputs.op_name }}" | java -Xmx6G -jar server.jar nogui
+            printf "op ${{ inputs.op_name }}" | java -Xmx3G -jar server.jar nogui
           else
             java -Xmx3G -jar server.jar nogui
           fi

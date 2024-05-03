@@ -66,8 +66,8 @@ jobs:
           tunnel_type: tcp
 
 
-      - name: setup ngrok
-        if: inputs.bedrock
+      - name: setup ngrok (geyser)
+        if: inputs.bedrcok
         uses: dsmirc/ngrok-tunnel-action@cd
         with:
           timeout: 6h

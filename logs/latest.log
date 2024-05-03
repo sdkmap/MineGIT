@@ -1,18 +1,43 @@
-[10:26:26] [ServerMain/ERROR]: Failed to load properties from file: server.properties
-java.nio.file.NoSuchFileException: server.properties
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:92) ~[?:?]
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106) ~[?:?]
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111) ~[?:?]
-	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:218) ~[?:?]
-	at java.nio.file.Files.newByteChannel(Files.java:380) ~[?:?]
-	at java.nio.file.Files.newByteChannel(Files.java:432) ~[?:?]
-	at java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422) ~[?:?]
-	at java.nio.file.Files.newInputStream(Files.java:160) ~[?:?]
-	at ame.b(SourceFile:62) ~[server-1.20.4.jar:?]
-	at amb.a(SourceFile:138) ~[server-1.20.4.jar:?]
-	at amc.<init>(SourceFile:12) ~[server-1.20.4.jar:?]
-	at net.minecraft.server.Main.main(SourceFile:112) ~[server-1.20.4.jar:?]
-	at net.minecraft.bundler.Main.lambda$run$0(Main.java:54) ~[?:?]
-	at java.lang.Thread.run(Thread.java:840) ~[?:?]
-[10:26:26] [ServerMain/WARN]: Failed to load eula.txt
-[10:26:26] [ServerMain/INFO]: You need to agree to the EULA in order to run the server. Go to eula.txt for more info.
+[14:53:36] [Paper Plugin Remapper Thread - 1/INFO]: [ReobfServer] Remapping server...
+[14:53:42] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[14:53:43] [ServerMain/INFO]: Found new data pack file/bukkit, loading it automatically
+[14:53:43] [ServerMain/INFO]: Found new data pack paper, loading it automatically
+[14:53:44] [ServerMain/INFO]: No existing world data, creating new world
+[14:53:44] [Paper Plugin Remapper Thread - 1/INFO]: [ReobfServer] Done remapping server in 7973ms.
+[14:53:44] [ServerMain/INFO]: Loaded 1175 recipes
+[14:53:44] [ServerMain/INFO]: Loaded 1276 advancements
+[14:53:45] [Server thread/INFO]: Starting minecraft server version 1.20.6
+[14:53:45] [Server thread/INFO]: Loading properties
+[14:53:45] [Server thread/INFO]: This server is running Paper version git-Paper-36 (MC: 1.20.6) (Implementing API version 1.20.6-R0.1-SNAPSHOT) (Git: 0db72ac)
+[14:53:45] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[14:53:45] [Server thread/INFO]: Using 4 threads for Netty based IO
+[14:53:46] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 1 worker threads, and gen parallelism of 1 threads
+[14:53:46] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+    We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
+    For more information please visit: https://github.com/PaperMC/Paper/issues/8948
+[14:53:46] [Server thread/INFO]: Default game type: SURVIVAL
+[14:53:46] [Server thread/INFO]: Generating keypair
+[14:53:46] [Server thread/INFO]: Starting Minecraft server on *:25565
+[14:53:46] [Server thread/INFO]: Using epoll channel type
+[14:53:46] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[14:53:46] [Server thread/INFO]: Paper: Using OpenSSL 3.0.x (Linux x86_64) cipher from Velocity.
+[14:53:46] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[14:53:46] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[14:53:46] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[14:53:46] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[14:53:46] [Server thread/INFO]: Preparing level "world"
+[14:53:58] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[14:54:03] [Server thread/INFO]: Time elapsed: 5346 ms
+[14:54:03] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[14:54:04] [Server thread/INFO]: Time elapsed: 1104 ms
+[14:54:04] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[14:54:05] [Server thread/INFO]: Time elapsed: 453 ms
+[14:54:05] [Server thread/INFO]: Running delayed init tasks
+[14:54:05] [Server thread/INFO]: Done (20.215s)! For help, type "help"
+[14:54:05] [Server thread/INFO]: *************************************************************************************
+[14:54:05] [Server thread/INFO]: This is the first time you're starting this server.
+[14:54:05] [Server thread/INFO]: It's recommended you read our 'Getting Started' documentation for guidance.
+[14:54:05] [Server thread/INFO]: View this and more helpful information here: https://docs.papermc.io/paper/next-steps
+[14:54:05] [Server thread/INFO]: *************************************************************************************
+[14:54:05] [Server thread/INFO]: Timings Reset
+[14:54:05] [Server thread/INFO]: Made snake a server operator

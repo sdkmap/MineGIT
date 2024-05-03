@@ -101,7 +101,7 @@ jobs:
           fi
 
       - name: Save to GitHub
-        if: always
+        if: always()
         run: |
           git pull
           git config user.name github-actions

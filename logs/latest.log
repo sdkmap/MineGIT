@@ -1,51 +1,73 @@
-[14:57:34] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[14:57:34] [ServerMain/INFO]: Found new data pack file/bukkit, loading it automatically
-[14:57:34] [ServerMain/INFO]: Found new data pack paper, loading it automatically
-[14:57:35] [ServerMain/INFO]: No existing world data, creating new world
-[14:57:35] [ServerMain/INFO]: Loaded 1175 recipes
-[14:57:36] [ServerMain/INFO]: Loaded 1276 advancements
-[14:57:36] [Server thread/INFO]: Starting minecraft server version 1.20.6
-[14:57:36] [Server thread/INFO]: Loading properties
-[14:57:36] [Server thread/INFO]: This server is running Paper version git-Paper-36 (MC: 1.20.6) (Implementing API version 1.20.6-R0.1-SNAPSHOT) (Git: 0db72ac)
-[14:57:37] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[14:57:37] [Server thread/INFO]: Using 4 threads for Netty based IO
-[14:57:37] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
-    We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
-    For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[14:57:37] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 1 worker threads, and gen parallelism of 1 threads
-[14:57:37] [Server thread/INFO]: Default game type: SURVIVAL
-[14:57:37] [Server thread/INFO]: Generating keypair
-[14:57:37] [Server thread/INFO]: Starting Minecraft server on *:25565
-[14:57:38] [Server thread/INFO]: Using epoll channel type
-[14:57:38] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
-[14:57:38] [Server thread/INFO]: Paper: Using OpenSSL 3.0.x (Linux x86_64) cipher from Velocity.
-[14:57:38] [Server thread/INFO]: [Geyser-Spigot] Loading server plugin Geyser-Spigot v2.3.0-SNAPSHOT
-[14:57:39] [Server thread/INFO]: [Geyser-Spigot] Loading extensions...
-[14:57:39] [Server thread/INFO]: [Geyser-Spigot] Loaded 0 extension(s)
-[14:57:39] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[14:57:39] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[14:57:39] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[14:57:39] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
-[14:57:39] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[14:57:39] [Server thread/INFO]: Preparing level "world"
-[14:57:50] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[14:57:56] [Server thread/INFO]: Time elapsed: 5782 ms
-[14:57:56] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[14:57:57] [Server thread/INFO]: Time elapsed: 1391 ms
-[14:57:57] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[14:57:57] [Server thread/INFO]: Time elapsed: 541 ms
-[14:57:57] [Server thread/INFO]: [Geyser-Spigot] Enabling Geyser-Spigot v2.3.0-SNAPSHOT
-[14:57:58] [Server thread/INFO]: [Geyser-Spigot] ******************************************
-[14:57:58] [Server thread/INFO]: [Geyser-Spigot] 
-[14:57:58] [Server thread/INFO]: [Geyser-Spigot] Loading Geyser version 2.3.0-SNAPSHOT (git-master-a39cd65)
-[14:57:58] [Server thread/INFO]: [Geyser-Spigot] 
-[14:57:58] [Server thread/INFO]: [Geyser-Spigot] ******************************************
-[14:58:04] [epollEventLoopGroup-3-1/INFO]: [Geyser-Spigot] Started Geyser on 0.0.0.0:19132
-[14:58:04] [Server thread/INFO]: [Geyser-Spigot] Done (5.996s)! Run /geyser help for help!
-[14:58:04] [Server thread/INFO]: Running delayed init tasks
-[14:58:04] [Server thread/INFO]: Done (28.032s)! For help, type "help"
-[14:58:04] [Server thread/INFO]: Timings Reset
-[14:58:04] [ForkJoinPool.commonPool-worker-1/WARN]: [Geyser-Spigot] Missing MC locale file: en_us
-[14:58:04] [ForkJoinPool.commonPool-worker-2/INFO]: [Geyser-Spigot] Downloading Minecraft JAR to extract required files, please wait... (this may take some time depending on the speed of your internet connection)
-[14:58:04] [Server thread/INFO]: Nothing changed. The player already is an operator
-[14:58:05] [ForkJoinPool.commonPool-worker-2/INFO]: [Geyser-Spigot] Minecraft JAR has been successfully downloaded and loaded!
+[17:03:39] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[17:03:39] [ServerMain/WARN]: Missing data pack paper
+[17:03:41] [ServerMain/INFO]: Loaded 1175 recipes
+[17:03:41] [ServerMain/INFO]: Loaded 1276 advancements
+[17:03:41] [Server thread/INFO]: Starting minecraft server version 1.20.6
+[17:03:41] [Server thread/INFO]: Loading properties
+[17:03:41] [Server thread/INFO]: Default game type: SURVIVAL
+[17:03:41] [Server thread/INFO]: Generating keypair
+[17:03:41] [Server thread/INFO]: Starting Minecraft server on *:25565
+[17:03:42] [Server thread/INFO]: Using epoll channel type
+[17:03:42] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[17:03:42] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[17:03:42] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[17:03:42] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[17:03:42] [Server thread/INFO]: Preparing level "world"
+[17:03:44] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[17:03:44] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[17:03:44] [Worker-Main-1/INFO]: Preparing spawn area: 0%
+[17:03:46] [Worker-Main-1/INFO]: Preparing spawn area: 0%
+[17:03:46] [Worker-Main-2/INFO]: Preparing spawn area: 0%
+[17:03:46] [Worker-Main-1/INFO]: Preparing spawn area: 2%
+[17:03:46] [Worker-Main-2/INFO]: Preparing spawn area: 18%
+[17:03:47] [Worker-Main-2/INFO]: Preparing spawn area: 22%
+[17:03:47] [Worker-Main-2/INFO]: Preparing spawn area: 42%
+[17:03:48] [Worker-Main-2/INFO]: Preparing spawn area: 53%
+[17:03:48] [Worker-Main-3/INFO]: Preparing spawn area: 61%
+[17:03:49] [Worker-Main-1/INFO]: Preparing spawn area: 83%
+[17:03:49] [Server thread/INFO]: Time elapsed: 5182 ms
+[17:03:49] [Server thread/INFO]: Done (7.511s)! For help, type "help"
+[17:06:08] [Server thread/INFO]: sarc[/[0:0:0:0:0:0:0:1%0]:47056] logged in with entity id 2 at (-505.5, 73.0, -184.5)
+[17:06:08] [Server thread/INFO]: sarc joined the game
+[17:06:18] [Server thread/INFO]: [Not Secure] <sarc> 4.tcp.ngrok.io:18305
+[17:07:13] [Server thread/INFO]: Gamermanwillkill[/[0:0:0:0:0:0:0:1%0]:55218] logged in with entity id 794 at (-509.5, 67.0, -174.5)
+[17:07:13] [Server thread/INFO]: Gamermanwillkill joined the game
+[17:07:26] [Server thread/WARN]: Mismatch in destroy block pos: iz{x=0, y=0, z=0} iz{x=-504, y=71, z=-168}
+[17:07:26] [Server thread/WARN]: Mismatch in destroy block pos: iz{x=0, y=0, z=0} iz{x=-503, y=71, z=-168}
+[17:11:05] [Server thread/INFO]: sarc was slain by Gamermanwillkill
+[17:11:30] [Server thread/INFO]: [Not Secure] <Gamermanwillkill> sarc
+[17:11:40] [Server thread/INFO]: [Not Secure] <Gamermanwillkill> monke
+[17:13:02] [Server thread/WARN]: Mismatch in destroy block pos: iz{x=-509, y=51, z=-84} iz{x=-509, y=50, z=-84}
+[17:13:02] [Server thread/WARN]: Mismatch in destroy block pos: iz{x=-509, y=52, z=-84} iz{x=-509, y=50, z=-84}
+[17:14:39] [Server thread/INFO]: Gamermanwillkill has made the advancement [Sweet Dreams]
+[17:15:27] [Server thread/INFO]: sarc was slain by Gamermanwillkill
+[17:15:30] [Server thread/INFO]: sarc lost connection: Disconnected
+[17:15:30] [Server thread/INFO]: sarc left the game
+[17:15:55] [Server thread/INFO]: sarc[/[0:0:0:0:0:0:0:1%0]:44570] logged in with entity id 4202 at (-611.8195813278346, 72.0, -154.69999998807907)
+[17:15:55] [Server thread/INFO]: sarc joined the game
+[17:16:01] [Server thread/INFO]: Gamermanwillkill was burned to a crisp while fighting Zombie
+[17:16:02] [Server thread/WARN]: Mismatch in destroy block pos: iz{x=0, y=0, z=0} iz{x=-508, y=68, z=-172}
+[17:16:02] [Server thread/WARN]: Mismatch in destroy block pos: iz{x=0, y=0, z=0} iz{x=-507, y=68, z=-172}
+[17:16:03] [Server thread/INFO]: Gamermanwillkill has made the advancement [Monster Hunter]
+[17:16:23] [Server thread/INFO]: sarc has made the advancement [Monster Hunter]
+[17:18:18] [Server thread/INFO]: Gamermanwillkill was slain by Iron Golem
+[17:19:59] [Server thread/INFO]: Gamermanwillkill has made the advancement [Acquire Hardware]
+[17:20:08] [Server thread/INFO]: sarc has made the advancement [Acquire Hardware]
+[17:20:35] [Server thread/INFO]: sarc was slain by Gamermanwillkill
+[17:23:48] [Server thread/WARN]: Gamermanwillkill moved too quickly! -5.671652849862767,0.24813599859093927,8.415033896396238
+[17:23:55] [Server thread/INFO]: Gamermanwillkill was slain by sarc
+[17:24:20] [Server thread/WARN]: sarc moved too quickly! -8.469628658091892,-4.640918650019685,-3.536381284981985
+[17:24:34] [Server thread/INFO]: sarc has made the advancement [Diamonds!]
+[17:27:16] [Server thread/INFO]: [Not Secure] <Gamermanwillkill> niga sleep
+[17:27:24] [Server thread/INFO]: [Not Secure] <Gamermanwillkill> ea
+[17:27:35] [Server thread/INFO]: sarc has made the advancement [Sweet Dreams]
+[17:27:52] [Server thread/INFO]: Villager cmm['Cartographer'/4455, l='ServerLevel[world]', x=-684.12, y=72.00, z=-267.46] died, message: 'Cartographer was slain by sarc'
+[17:28:11] [Server thread/INFO]: Gamermanwillkill was slain by Zombie
+[17:28:22] [Server thread/INFO]: Villager cmm['Farmer'/4487, l='ServerLevel[world]', x=-686.26, y=72.00, z=-265.11] died, message: 'Farmer was slain by sarc'
+[17:28:24] [Server thread/INFO]: Villager cmm['Butcher'/3475, l='ServerLevel[world]', x=-683.21, y=72.00, z=-267.70] died, message: 'Butcher was slain by Gamermanwillkill'
+[17:28:34] [Server thread/INFO]: sarc was blown up by Creeper
+[17:28:51] [Server thread/INFO]: sarc lost connection: Disconnected
+[17:28:51] [Server thread/INFO]: sarc left the game
+[17:29:06] [Server thread/INFO]: Gamermanwillkill was blown up by Creeper
+[17:29:14] [Server thread/INFO]: Gamermanwillkill lost connection: Disconnected
+[17:29:14] [Server thread/INFO]: Gamermanwillkill left the game
